@@ -209,14 +209,20 @@
         <hr>
 
         <!-- INLINE FORM -->
-        <form class="form-inline">
-         <div class="form-group">
-           <label>Email</label>
-           <input type="email" class="form-control" placeholder="Email">
+        <form class="form-inline has-success has-feedback">
+         <div class="form-group has-succes has-feedback">
+           <label class="control-label" for="inputSuccess2">Email</label>
+           <div class="input-group">
+             <span class="input-group-addon">@</span>
+           <input type="email" class="form-control" placeholder="Email" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+           <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
          </div>
-         <div class="form-group">
-           <label>Password</label>
+         </div>
+         <div class="form-group has-error has-feedback">
+           <label class="control-label">Password</label>
            <input type="password" class="form-control" placeholder="Password">
+           <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+           <span id="inputError2Status" class="sr-only">(error)</span>
          </div>
          <div class="checkbox">
          <label>
@@ -231,7 +237,7 @@
 
    <!-- TABLES -->
     <div class="container">
-      <table class="table table-striped table-bordered table-hover table-condensed">
+      <table class="table table-striped table-bordered table-hover table-condensed ">
         <tr>
           <th>Firstname</th>
           <th>Lastname</th>
@@ -342,9 +348,18 @@
 
     <!-- IMAGES -->
     <div class="container">
-      <img class="thumbnail" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150">
-      <img class="img-rounded" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150"><br><br>
-      <img class="img-circle" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150">
+      <img class="thumbnail"  width="200"src="4f86c178e11ac.jpg" data-toggle="modal" data-target="#myModal">
+      <img class="img-rounded" src="4f86c178e11ac.jpg"><br><br>
+      <img class="img-circle" src="4f86c178e11ac.jpg">
+
+    </div>
+
+    <!-- MODAL-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="img">
+       <div class="modal-dialog" role="img">
+
+      <img class="modal-content" src="4f86c178e11ac.jpg"><br><br>
+    </div>
     </div>
 
     <hr>
@@ -424,11 +439,13 @@
       </div>
     </div>
 
+
     <div style="height:400px"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    $('#myModal').modal('show')
   </body>
 </html>
